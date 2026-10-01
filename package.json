@@ -10,7 +10,7 @@
     "start": "node index.js",
     "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rimraf dist && cd ../learning-frontend && npm run build && copyfiles -u 2 ../learning-frontend/dist/**/* ./dist",
+    "build:ui": "rm -rf dist && cd ../learning-frontend && npm run build && cp -r dist ../fullstack-open-sandbox",
     "deploy:full": "npm run build:ui && git add . && git commit -m \"uibuild\" && git push"
   },
   "dependencies": {
