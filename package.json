@@ -9,10 +9,16 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rimraf dist && cd ../learning-frontend && npm run build && copyfiles -u 2 ../learning-frontend/dist/**/* ./dist",
+    "deploy:full": "npm run build:ui && git add . && git commit -m \"uibuild\" && git push"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.1.3"
   }
 }
