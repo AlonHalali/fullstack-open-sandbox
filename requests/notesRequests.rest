@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:3001/api/notes
+
+# Get all notes
+GET {{baseUrl}}
+
+###
+
+# Delete note
+@id = 2
+DELETE {{baseUrl}}/{{id}}
+
+###
+
+# Create note
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+{
+    "name": "sample",
+    "time": "Wed, 1 Oct 2026 13:42:41 GMT"
+}
